@@ -2,7 +2,7 @@ from celery import Celery
 
 #guardar el log de un logueo en la aplicación
 
-celery_app = Celery(__name__, broker='redis:://localhost:6379/0')
+celery_app = Celery(__name__, broker='redis://localhost:6379/0')
 
 @celery_app.task() #que la funcion va a pasar a traves de la cola es necesario el decoartor
 def registrar_log(usuario, fecha):
